@@ -10,13 +10,20 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
-            'name' => 'Alberto Manansala',
-            'email' => 'manangsalaberto@example.com',
-            'password' => Hash::make('password'),
-        ]);
+        // Ensure the default user exists without creating duplicates
+        User::firstOrCreate(
+            ['email' => 'manangsalaberto@example.com'],
+            [
+                'name' => 'Alberto Manansala',
+                'password' => Hash::make('password'),
+            ]
+        );
 
-        $this->call(StudentSeeder::class);
+        // Seed students and learning strands
+        $this->call([
+            StudentSeeder::class,
+            LearningstrandSeeder::class,
+        ]);
     }
 
     public function runLearningstrandSeeder(): void

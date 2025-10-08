@@ -20,3 +20,10 @@ Route::get('/learningstrands/{id}', [App\Http\Controllers\LearningstrandControll
 Route::post('/learningstrands', [App\Http\Controllers\LearningstrandController::class, 'store']);
 Route::put('/learningstrands/{id}', [App\Http\Controllers\LearningstrandController::class, 'update']);
 Route::delete('/learningstrands/{id}', [App\Http\Controllers\LearningstrandController::class, 'destroy']);
+
+// Recommendations routes
+Route::get('/recommendations', [App\Http\Controllers\RecommendationsController::class, 'index']);
+Route::get('/recommendations/{id}', [App\Http\Controllers\RecommendationsController::class, 'show']);
+Route::post('/recommendations', [App\Http\Controllers\RecommendationsController::class, 'store']);
+Route::put('/recommendations/{id}', [App\Http\Controllers\RecommendationsController::class, 'update']);
+Route::delete('/recommendations/{id}', [App\Http\Controllers\RecommendationsController::class, 'destroy']); 
