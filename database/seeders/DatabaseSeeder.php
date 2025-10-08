@@ -18,4 +18,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(StudentSeeder::class);
     }
+
+    public function runLearningstrandSeeder(): void
+    {
+        $this->call(LearningstrandSeeder::class);
+    }
 }
