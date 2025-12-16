@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/test', function () {
     return response()->json(['message' => 'API is working!']);
 });
+//student routes
 // Student routes
 Route::get('/students', [App\Http\Controllers\StudentController::class, 'index']);
 Route::get('/students/{id}', [App\Http\Controllers\StudentController::class, 'show']);
